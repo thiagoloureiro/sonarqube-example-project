@@ -1,0 +1,120 @@
+
+[m[32m]9;8;"USERNAME"\@]9;8;"COMPUTERNAME"\ [92mC:\sonar[90m
+[90m#[m ]9;12\dotnet sonarscanner begin /d:sonar.login=5efe49e6253642a1520616180880ab5ff11cb31c /k:"test" /d:sonar.host.url="http://localhost:9999" 
+SonarScanner for MSBuild 4.6.2
+Using the .NET Core version of the Scanner for MSBuild
+Pre-processing started.
+Preparing working directories...
+08:01:20.209  Updating build integration targets...
+08:01:20.241  Fetching analysis configuration settings...
+08:01:20.635  Provisioning analyzer assemblies for cs...
+08:01:20.637  Installing required Roslyn analyzers...
+08:01:20.819  Provisioning analyzer assemblies for vbnet...
+08:01:20.82  Installing required Roslyn analyzers...
+08:01:20.852  Pre-processing succeeded.
+
+[m[32m]9;8;"USERNAME"\@]9;8;"COMPUTERNAME"\ [92mC:\sonar[90m
+[90m#[m ]9;12\dotnet build "sonar.sln" 
+Microsoft (R) Build Engine version 16.4.0+e901037fe for .NET Core
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+  Restore completed in 24.87 ms for C:\sonar\sonar.csproj.
+Program.cs(5,11): warning S1118: Add a 'protected' constructor or the 'static' keyword to the class declaration. [C:\sonar\sonar.csproj]
+  sonar -> C:\sonar\bin\Debug\netcoreapp3.1\sonar.dll
+
+Build succeeded.
+
+Program.cs(5,11): warning S1118: Add a 'protected' constructor or the 'static' keyword to the class declaration. [C:\sonar\sonar.csproj]
+    1 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:01.20
+
+[m[32m]9;8;"USERNAME"\@]9;8;"COMPUTERNAME"\ [92mC:\sonar[90m
+[90m#[m ]9;12\dotnet sonarscanner end /d:sonar.login=5efe49e6253642a1520616180880ab5ff11cb31c 
+SonarScanner for MSBuild 4.6.2
+Using the .NET Core version of the Scanner for MSBuild
+Post-processing started.
+Calling the SonarQube Scanner...
+INFO: Scanner configuration file: C:\Users\ThiagoLoureiro\.dotnet\tools\.store\dotnet-sonarscanner\4.6.2\dotnet-sonarscanner\4.6.2\tools\netcoreapp2.1\any\sonar-scanner-3.3.0.1492\bin\..\conf\sonar-scanner.properties
+INFO: Project root configuration file: C:\sonar\.sonarqube\out\sonar-project.properties
+INFO: SonarQube Scanner 3.3.0.1492
+INFO: Java 1.8.0_221 Oracle Corporation (32-bit)
+INFO: Windows 10 10.0 x86
+INFO: User cache: C:\Users\ThiagoLoureiro\.sonar\cache
+INFO: SonarQube server 7.9.2
+INFO: Default locale: "en_AU", source code encoding: "windows-1252" (analysis is platform dependent)
+WARN: SonarScanner will require Java 11 to run starting in SonarQube 8.x
+INFO: Load global settings
+INFO: Load global settings (done) | time=55ms
+INFO: Server id: 4C31D11C-AW_ztH3nt1DvURdi6acb
+INFO: User cache: C:\Users\ThiagoLoureiro\.sonar\cache
+INFO: Load/download plugins
+INFO: Load plugins index
+INFO: Load plugins index (done) | time=33ms
+INFO: Load/download plugins (done) | time=56ms
+INFO: Process project properties
+INFO: Execute project builders
+INFO: Execute project builders (done) | time=24ms
+INFO: Project key: test
+INFO: Base dir: C:\sonar
+INFO: Working dir: C:\sonar\.sonarqube\out\.sonar
+INFO: Load project settings for component key: 'test'
+INFO: Load project settings for component key: 'test' (done) | time=13ms
+INFO: Load quality profiles
+INFO: Load quality profiles (done) | time=38ms
+INFO: Load active rules
+INFO: Load active rules (done) | time=566ms
+INFO: Indexing files...
+INFO: Project configuration:
+INFO: Indexing files of module 'sonar'
+INFO:   Base dir: C:\sonar
+INFO:   Source paths: Program.cs, .gitignore, docker-compose.yml, output.txt, READM...
+INFO: Load project repositories
+INFO: Load project repositories (done) | time=17ms
+INFO: Indexing files of module 'test'
+INFO:   Base dir: C:\sonar
+INFO: 6 files indexed
+INFO: 0 files ignored because of scm ignore settings
+INFO: Quality profile for cs: Sonar way
+INFO: ------------- Run sensors on module sonar
+INFO: Load metrics repository
+INFO: Load metrics repository (done) | time=14ms
+INFO: Sensor JaCoCo XML Report Importer [jacoco]
+INFO: Sensor JaCoCo XML Report Importer [jacoco] (done) | time=2ms
+INFO: Sensor C# Properties [csharp]
+INFO: Sensor C# Properties [csharp] (done) | time=2ms
+INFO: Sensor JavaXmlSensor [java]
+INFO: Sensor JavaXmlSensor [java] (done) | time=1ms
+INFO: Sensor HTML [web]
+INFO: Sensor HTML [web] (done) | time=8ms
+INFO: ------------- Run sensors on module test
+INFO: Sensor JaCoCo XML Report Importer [jacoco]
+INFO: Sensor JaCoCo XML Report Importer [jacoco] (done) | time=1ms
+INFO: Sensor JavaXmlSensor [java]
+INFO: Sensor JavaXmlSensor [java] (done) | time=0ms
+INFO: Sensor C# [csharp]
+INFO: Importing results from 5 proto files in 'C:\sonar\.sonarqube\out\0\output-cs'
+INFO: Importing 1 Roslyn report
+INFO: Sensor C# [csharp] (done) | time=120ms
+INFO: ------------- Run sensors on project
+INFO: Sensor Zero Coverage Sensor
+INFO: Sensor Zero Coverage Sensor (done) | time=6ms
+INFO: 1 file had no CPD blocks
+INFO: Calculating CPD for 0 files
+INFO: CPD calculation finished
+INFO: Analysis report generated in 56ms, dir size=74 KB
+INFO: Analysis report compressed in 16ms, zip size=11 KB
+INFO: Analysis report uploaded in 23ms
+INFO: ANALYSIS SUCCESSFUL, you can browse http://localhost:9999/dashboard?id=test
+INFO: Note that you will be able to access the updated dashboard once the server has processed the submitted analysis report
+INFO: More about the report processing at http://localhost:9999/api/ce/task?id=AW_zwKoHv77AKQVc88mD
+INFO: Analysis total time: 2.465 s
+INFO: ------------------------------------------------------------------------
+INFO: EXECUTION SUCCESS
+INFO: ------------------------------------------------------------------------
+INFO: Total time: 4.311s
+INFO: Final Memory: 11M/31M
+INFO: ------------------------------------------------------------------------
+The SonarQube Scanner has finished
+08:01:27.632  Post-processing succeeded.
